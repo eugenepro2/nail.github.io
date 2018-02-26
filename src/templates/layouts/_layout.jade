@@ -3,6 +3,7 @@ doctype html
 html
   head
     include _head
+  
 
   body(class=bodyClass)
     //BEGIN out
@@ -14,4 +15,6 @@ html
 
     //LOAD SCRIPTS
     block scripts
+      script(src="https://code.jquery.com/jquery-1.9.1.js")
+      script(src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js")
       script(type="text/javascript" src="js/app.js")

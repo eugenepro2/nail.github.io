@@ -1,5 +1,268 @@
 body
 	background: #FFF
-	+css-lock(16, 50, 600, 1000)
 	line-height: 1.4
+	font-family: 'Avenir Next Cyr'
 
+.container
+	max-width: 1200px
+	width: 100%
+	box-sizing: border-box
+	+r(640)
+		padding: 0 77px
+
++font('Made', 'made')
+
+.flex
+	display: flex
+.flex-direction
+	flex-direction: column
+
+input, textarea
+	-webkit-appearance: none
+	-webkit-border-radius: 0
+	background-clip: padding-box
+	-webkit-appearance: none
+	-moz-appearance: none
+	appearance: none
+
+
+//Общая кнопка
+.btn
+	border: solid 2px $watermelon
+	font-size: 22px
+	padding: 20px 60px
+	display: inline-block
+	background: $watermelon
+	font-weight: bold
+	color: #000
+	text-decoration: none
+	text-transform: lowercase
+	transition: all 0.3s
+	letter-spacing: 4px
+	+r(640)
+		width: 100%
+		font-size: 30px
+		letter-spacing: 6px
+		text-align: center
+		padding: 27px 60px
+	&:hover
+		background: transparent
+		color: $watermelon
+
+//Кнопка загрузки фотографий
+.load
+	margin-top: 50px
+	margin-bottom: 75px
+	border: solid 2px $watermelon
+	font-size: 16px
+	padding: 20px 60px
+	display: inline-block
+	background: #fff
+	font-weight: bold
+	color: $watermelon
+	text-decoration: none
+	text-transform: lowercase
+	transition: all 0.3s
+	cursor: pointer
+	&:hover
+		background: $watermelon
+		color: #fff
+
+
+//Кнопка смотреть работы на первом экране
+.next--intro
+	display: inline-block
+	position: relative
+	width: 80px
+	bottom: 100px
+	animation: slideDown 3s infinite
+	cursor: pointer
+	color: #000000
+	height: 120px
+	+r(640)
+		display: none
+	+r(1400)
+		float: right
+		right: 100px
+	span
+		text-decoration: none
+		display: inline-block
+		transform: rotate(-90deg)
+		font-weight: bold
+		font-size: 12px
+		width: 120px
+		position: absolute
+		top: 38px
+	i
+		border-left: 1px solid 
+		height: 120px
+		display: inline-block
+		position: absolute
+		right: 0
+		top: 0
+		&:after
+			content: ''
+			background: url(../img/arrow.svg)
+			width: 20px
+			height: 20px
+			display: block
+			position: absolute
+			bottom: 0
+			transform:  rotate(90deg) translate(6px, 10.5px)
+
+@keyframes slideDown
+		0%
+			transform: translateY(0)
+		50%
+			transform: translateY(20px)
+		100%
+			transform: translateY(0)
+
+
+
+//Кнопка вверху
+.header
+	.container
+		position: relative
+.menu
+	position: absolute
+	top: 50px
+	right: 55px
+	z-index: 10
+	cursor: pointer
+	width: 44px
+	height: 33px
+	cursor: pointer
+	z-index: 100
+	+r(640)
+		right: 77px
+	b
+		position: absolute
+		left: 0
+		width: 44px
+		height: 5px
+		background-color: $watermelon
+		+r(640)
+			width: 70px
+			height: 4px
+		&:nth-child(1)
+			top: 0
+		&:nth-child(2)
+			top: 50%
+			display: none
+		&:nth-child(3)
+			top: 30%
+
+
+//Прелоадер
+#preloader
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background: #ffffff
+	z-index: 1000
+	display: flex
+	justify-content: center
+	align-items: center
+	.spinner
+		width: 40px
+		height: 40px
+		position: relative
+		text-align: center
+		-webkit-animation: rotate 2.0s infinite linear
+		animation: rotate 2.0s infinite linear
+	.dot1
+		width: 60%
+		height: 60%
+		display: inline-block
+		position: absolute
+		top: 0
+		background-color: #333
+		border-radius: 100%
+		animation: anim 2.0s infinite ease-in-out
+	.dot2
+		width: 60%
+		height: 60%
+		display: inline-block
+		position: absolute
+		top: 0
+		background-color: #333
+		border-radius: 100%
+		animation: anim 2.0s infinite ease-in-out
+		top: auto
+		bottom: 0px
+		animation-delay: -1.0s
+
+	@keyframes rotate
+		100%
+			transform: rotate(360deg)
+
+
+	@keyframes anim
+		0%, 100%
+			transform: scale(0.0)
+		50%
+			transform: scale(1.0)
+
+
+//Инстаграм мобильная
+.inst--mobile
+	box-sizing: border-box
+	padding: 15px
+	position: absolute
+	border: 1px solid $watermelon
+	background: transparent
+	top: 30px
+	width: 380px
+	z-index: 10
+	display: none
+	border-radius: 5px
+	text-decoration: none
+	p
+		margin-bottom: 0 !important
+		line-height: 1.1
+		font-size: 22px !important
+		color: $watermelon
+	&:before
+		content: ''
+		+arr(20,25, $watermelon, r)
+		position: absolute
+		right: -20px
+		top: 50%
+		transform: translateY(-50%)
+
+
+.logo__excv
+	float: right
+	position: relative
+	left: 32px
+	top: 40px
+	display: block
+	text-decoration: none
+	color: #fff
+	+r(640)
+		left: inherit
+		right: 50%
+		transform: translateX(50%)
+		margin-bottom: 70px
+	span
+		font-size: 12px
+		font-weight: 100
+		+r(640)
+			font-size: 24px
+			position: relative
+			top: -3px
+	.icon
+		fill: #fff
+		position: relative
+		top: 3px
+		transition: fill 0.3s
+		+r(640)
+			width: 100px
+			height: 30px
+		&:hover
+			fill: $watermelon
+		.st2
+			fill: #000

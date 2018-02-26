@@ -3,4 +3,74 @@ title: Index Page
 ---
 extends layouts/_layout
 block content
-  h1 Index page
+  //AmoCRM
+  script.
+    var amo_social_button = {id: 3494, hash: "0fcfae93fa7db22f84de03eb25915facd2a6634d56c6d322eae89ef8cb19ade4", locale: "ru"};
+  script#amo_social_button_script(async='async', src='https://gso.amocrm.ru/js/button.js')
+
+  <script>fbq('track', 'Lead');</script>
+  section.intro.parallax-window(data-parallax="scroll" data-image-src="../img/bg.jpg")
+    a(href="https://www.instagram.com/iy.nail.studio/").inst--mobile
+      p Посмотреть работы в Инстаграм
+    .container
+      .row
+        .col-xs-12
+          .intro__text
+            h2.wow.fadeIn Свобода
+            h2 быть
+            span собой
+          p Комбинированный маникюр + покрытие<br>гель-лак с идеальным выравниванием и бликом
+          a.btn(href="http://n11095.yclients.com/" onclick="fbq('track', 'Lead')") Записаться
+    a(href="#inst").next--intro
+      span смотреть работы 
+      i.icon-next
+  section.contact
+    .container
+      .row
+        .col-xs-12.center-xs
+          h2 Контакты
+        .col-md-8.col-xs-12
+          .contact__block
+            h3 Адрес:
+            p г. Москва, м. Менделеевская,<br>ул. Новослободская 67/69
+            h3 Телефон:
+            p 8(499) - 499  - 01 - 91
+            h3 Вы можете связаться с нами любым<br>удобным для Вас способом:
+            .contact__icon
+              a(href="https://t.me/iynailstudio_bot").contact__icon__block.contact__icon__block--telegram
+                +icon('telegram')
+                span Telegram
+              a(href="https://api.whatsapp.com/send?phone=79256036763").contact__icon__block.contact__icon__block--whatsapp
+                +icon('whatsapp')
+                span Whatsapp
+              a(href="viber://add?number=79256036763").contact__icon__block.contact__icon__block--viber
+                +icon('viber')
+                span Viber
+            a(href="https://www.instagram.com/iy.nail.studio/").contact__icon--inst
+              span Посмотреть работы в 
+              +icon('inst')
+        .col-sm-4.col-xs-12
+          form(method="post" action="send.php")
+            h4 Написать руководителю:
+            input(type="text" placeholder="Ваше имя" name="name" required)
+            input(type="tel" placeholder="Ваш телефон" name="phone" required)
+            input(type="text" placeholder="Ваш комментарий" name="comment" required)
+            input(type="submit", value="отправить")
+          .response
+          a(href="http://excv.ru/?utm_sourse=iynail.studio").logo__excv
+            span by:
+            +icon('logo_excv')
+  section.inst#inst
+    .container
+      .row
+        .col-xs-12.center-xs
+          +icon('inst')
+          h2 iy.nail.studio
+      .row#instafeed
+      .row
+        .col-xs-12.center-xs
+          a.load загрузить еще
+  section#modal-feed
+        
+
+

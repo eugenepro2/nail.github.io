@@ -1,3 +1,335 @@
-.block
-	display: flex
-	// remove this
+
+				
+
+
+//Первый экран
+.parallax-window
+	min-height: 400px
+	background: transparent
+.intro
+	background-size: cover
+	padding-top: 125px
+	position: relative
+	overflow-x: hidden
+	+r(640)
+		background: url('/img/bg-mobile.jpg') no-repeat 101% 50% !important
+		padding-top: 160px
+		height: 100vh
+		background-size: cover !important
+	.intro__text
+		margin-bottom: 50px
+		h2:first-child
+			position: relative
+			display: inline-block
+			&:after
+				content: ''
+				background: url(../img/list.svg) no-repeat
+				width: 106px
+				height: 45px
+				display: block
+				position: absolute
+				right: -74px
+				top: 30px
+				transform: rotate(-20deg)
+			&:before
+				content: ''
+				background: url(../img/list.svg) no-repeat
+				width: 79px
+				height: 45px
+				display: block
+				position: absolute
+				top: 4px
+				left: 103px
+				transform: rotate(-125deg)
+		h2
+			font-size: 83px
+			font-weight: bold
+			text-transform: uppercase
+			line-height: 1.2
+			letter-spacing: 8px
+			user-select: none
+			+r(640)
+				font-size: 72px
+		span
+			font-family: 'Made'
+			font-size: 217px
+			line-height: 0.2
+			position: relative
+			left: 170px
+			user-select: none
+			font-display: block
+	p
+		font-size: 24px
+		margin-bottom: 50px
+
+
+//Инстраграм
+.inst
+	padding-top: 60px
+	+r(640)
+		display: none
+	h2
+		margin-bottom: 50px
+		font-size: 30px
+		font-weight: 400
+		display: inline-block
+	&__block
+		flex-basis: 300px !important
+		max-width: 300px !important
+		transition: box-shadow 0.3s
+		display: block
+		cursor: pointer
+		height: 298px
+		margin-bottom: 4px
+		margin-left: 4px
+		&:hover
+			box-shadow: 0 18px 48.5px 8.6px rgba(51, 51, 51, 0.4)
+			position: relative
+			z-index: 1
+		&__image
+			width: 100%
+			height: 100%
+			overflow: hidden
+			img
+				height: 100%
+				width: 100%
+
+
+//Контакты
+.contact
+	.container
+		max-width: 960px
+	padding-top: 50px
+	background: $black-two
+	height: 100vh
+	color: #fff
+	display: none
+	position: absolute
+	top: 0
+	width: 100%
+	z-index: 10
+	+r(640)
+		height: initial
+		padding-top: 150px
+	h2
+		font-size: 60px
+		text-transform: uppercase
+		letter-spacing: 6px
+		margin-bottom: 30px
+		display: inline-block
+		position: relative
+		+rhmin(800)
+			margin-bottom: 100px
+
+		&:before
+			content: ''
+			background: url(../img/list-2.svg) no-repeat
+			width: 90px
+			height: 45px
+			display: block
+			position: absolute
+			top: -5px
+			left: 192px
+			transform: rotate(-65deg)
+		+r(640)
+			margin-bottom: 50px
+	h3
+		font-size: 18px
+		+r(640)
+			font-size: 24px
+	p
+		font-size: 18px
+		margin-bottom: 20px
+		+r(640)
+			font-size: 24px
+	&__block
+		flex-basis: 340px
+		max-width: 340px
+		+r(640)
+			flex-basis: 100%
+			max-width: 100%
+	&__icon
+		margin-top: 25px
+		display: flex
+		justify-content: space-between
+		&__block
+			text-decoration: none
+			&:hover .icon
+				background: transparent
+				border-color: $reddish-pink
+				fill: $reddish-pink	
+			.icon
+				border: 2px solid #fff
+				width: 80px
+				height: 80px
+				box-sizing: border-box
+				padding: 20px
+				fill: #fff
+				transition: all 0.3s
+				+r(640)
+					width: 130px
+					height: 130px
+					padding: 33px
+			span
+				text-align: center
+				display: block
+				color: #fff
+				text-decoration: none
+				+r(640)
+					font-size: 24px
+		&--inst
+			margin-top: 20px
+			border: 2px solid $reddish-pink	
+			color: $reddish-pink
+			padding: 27px 40px
+			width: 340px
+			height: 70px
+			box-sizing: border-box
+			display: flex
+			align-items: center
+			justify-content: center
+			transition: all 0.3s
+			text-decoration: none
+			+r(640)
+				width: 100%
+				margin-top: 40px
+				height: 110px
+			&:hover
+				background: transparent
+				color: #ffffff
+				border-color: #fff
+				.icon
+					fill: #fff
+			.icon
+				fill: $reddish-pink
+				margin-left: 10px
+				width: 30px
+				height: 30px
+				transition: all 0.3s
+				+r(640)
+					width: 50px
+					height: 50px
+					margin-left: 30px
+			span	
+				+r(640)
+					font-size: 24px
+	form
+		width: 340px
+		position: relative
+		top: 40px
+		+r(640)
+			width: 100%
+			margin-top: 140px
+			margin-left: 0
+		h4
+			color: $warm-grey
+			font-size: 18px
+			font-weight: 400
+			margin-bottom: 20px
+			+r(640)
+				font-size: 24px
+		input
+			border: none
+			border-bottom: 1px solid $pinkish-grey
+			background: transparent
+			display: block
+			width: 100%
+			box-sizing: border-box
+			font-size: 16px
+			padding: 20px 25px
+			color: #fff
+			border-radius: 0
+			margin-bottom: 30px
+			font-family: 'Avenir Next Cyr'
+			transition: all 0.3s
+			&:hover, &:focus
+				border-bottom: 1px solid $watermelon
+			+r(640)
+				font-size: 24px
+				margin-bottom: 25px
+		input[type=submit]
+			margin-top: 45px
+			background: $watermelon
+			border: none
+			font-weight: 600
+			border: 2px solid $watermelon
+			letter-spacing: 6px
+			+r(640)
+				font-size: 30px
+				padding: 30px 
+				margin-top: 60px
+				margin-bottom: 70px
+			&:hover
+				background: transparent
+				border: 2px solid $watermelon
+				color: $watermelon
+		& + .response
+			display: none
+			+r(640)
+				margin-top: 160px
+				font-size: 24px
+				height: 470px
+
+//Модальное окно
+.modal
+	max-width: 780px
+	height: 430px
+	padding: 0
+	border-radius: 0
+	box-shadow: 0 0 38px 0 rgba(51, 51, 51, 0.15)
+	&__image
+		width: 420px
+		height: 430px
+		overflow: hidden
+		display: inline-block
+		img
+			height: 100%
+	a.close-modal
+		background: url('../img/cancel.svg')
+		top: 14.5px
+		right: 31.5px
+		transition: all 0.3s
+		&:hover
+			background: url('../img/cancel-hover.svg')
+	&__nav
+		padding: 15px 0
+		.prev, .next
+			.icon
+				width: 30px
+				height: 30px
+				fill: #1f1f1f
+				cursor: pointer
+				transition: fill 0.3s
+				&:hover
+					fill: $reddish-pink
+		.prev
+			transform: rotate(180deg) translateY(4.8px)
+			display: inline-block
+		.next
+			margin-left: 20px
+	&__info
+		width: 360px
+		padding: 0 40px
+		&__user
+			display: flex
+			margin-bottom: 30px
+			&__name
+				font-size: 16px
+				font-weight: 500
+				color: #333333
+			&__date
+				font-size: 14px
+				font-weight: 500
+				color: $warm-grey
+			&__block
+				flex-direction: column
+				margin-left: 15px
+			&__photo
+				width: 70px
+				height: 70px
+				overflow: hidden
+				border-radius: 50%
+				border: solid 1px #e8e8e8
+				img
+					width: 100%
+					height: 100%
